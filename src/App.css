@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+  margin-left: 1rem;
+  display: inline;
+}
+
+.App-header {
+  padding: 20px;
+  color: #9244C2;
+  background: #eee;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.button {
+  background: none;
+  color: inherit;
+  border: 2px solid #9244C2;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin-right: 20px;
+
+}
+
+.button:hover {
+  background: #eee;
+}
+
+.button:active {
+  background: #9244C2;
+}
+
+
+.App-link {
+  font-size: 25px;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 200px;
+  cursor: pointer;
+  background: #eee;
+}
+
+.App-link:hover{
+  background: #d3d3d3;
+}
+.App-link:active{
+  font-size: 22px;
+}
+
+p {
+  font-size: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-items-list {
+
+}
+.menu-item {
+  list-style-type: none;
+  margin-right: 1rem;
+  display: inline;
+}
+.menu-item a:hover {
+    background: #fff;
+}
+
+.logo-link {
+  margin-right: 3rem;
+  color: #9244C2;
+}
+
+.App-welcome {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #9244C2;
+  background: #eee;
+}
+
+.counter {
+  min-height: 9rem;
+}
+.App-welcome img {
+  margin-right: 3rem;
+}
+
+.toggle {
+  width: 100%;
+  padding: 10px 20px;
+  width: 50px;
+  display: none;
+}
+
+@media (max-width:768px)
+{
+  .toggle
+  {
+    display: block;
+  }
+.menu-items-list
+{
+  width: 100%;
+}
+.menu-item
+{
+  text-align: left;
+  display: none;
+}
+.logo-link {
+  display: none;
+}
+}
+
+.active {
+  display: block;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
