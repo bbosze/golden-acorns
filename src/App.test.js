@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import App from '../components/Navbar';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<SimpleGoldenAcornApp />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe ('<Navbar />', () => {
+  it('renders 1 <Navbar /> component', () => {
+    const component = shallow(<Navbar />);
+    expect(component)..toBeDefined();
+  });
 });

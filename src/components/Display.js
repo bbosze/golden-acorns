@@ -7,7 +7,7 @@ const Display = ({ acorns }) => {
   }
   return(
   <div className="counter">
-    <p> {acorns}</p>
+    <p> {!isNaN(acorns)? acorns : 'Database not available' }</p>
     <p>{acornPic}</p>
   </div>)
 }

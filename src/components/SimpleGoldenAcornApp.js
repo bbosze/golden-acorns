@@ -3,14 +3,13 @@ import Header from './Header';
 import Button from './Button';
 import Display  from './Display';
 import getInitialState from './helpers/getinitialstate'
-import '../App.css';
 
 class SimpleGoldenAcornApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       acorns: 'loading',
-      url: this.props.history.location.pathname.substr(1)
+      url: this.props.history.location.pathname.substr(1),
     }
   };
 
@@ -50,6 +49,7 @@ class SimpleGoldenAcornApp extends Component {
         <h1>Golden acorn is life!</h1>
         <Display acorns={ this.state.acorns }/>
         <Button buyOne={this.buyOne} eatOne={this.eatOne}/>
+        <p className="arrow-info">&uarr; and &darr; keys also work to change the amount of acorns.</p>
       </div>
     );
   }

@@ -2,42 +2,28 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SimpleGoldenAcornApp from './SimpleGoldenAcornApp';
 import ReduxGoldenAcornApp from './ReduxGoldenAcornApp';
+import Subscribe from './Subscribe';
 import Welcome from './Welcome';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-
-// getInitialState('redux').then(data => console.log(data));
-
-const initialState = {
-  count: 0
-};
-
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case 'BUYONE':
-      return {
-        count: state.count + 1
-      };
-    case 'EATONE':
-      return {
-        count: state.count - 1
-      };
-    case 'SET INIT' :
-    return {
-      count: action.payload
-    };
-    default:
-      return state;
-  }
-}
+import reducer from './reducers/reducer.js'
+import getInitialState from './helpers/getinitialstate'
 
 const store = createStore(reducer);
+getInitialState('redux').then(data => {
+  store.dispatch({
+    type: 'SET INIT',
+    payload: data
+  })
+});
+
 
 const Router = () => (
   <BrowserRouter>
     <Provider store={store}>
       <Switch>
         <Route exact path="/" component={Welcome} />
+        <Route exact path="/index" component={Subscribe} />
         <Route exact path="/simple" component={SimpleGoldenAcornApp} />
         <Route exact path="/redux" component={ReduxGoldenAcornApp} />
       </Switch>

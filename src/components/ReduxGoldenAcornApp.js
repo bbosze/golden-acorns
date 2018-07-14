@@ -2,32 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
 import Button from './Button';
+import { dispatchEat, dispatchBuy } from './actions/actions'
+import putAcornData from './helpers/putacorndata'
 import Display  from './Display';
-import getInitialState from './helpers/getinitialstate'
 import '../App.css';
+
 
 class ReduxGoldenAcornApp extends Component {
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown)
-    getInitialState('redux').then(data => {
-      this.props.dispatch({
-        type: 'SET INIT',
-        payload: data
-      })
-    });
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown)
   }
 
+  sendAcornData() {
+    putAcornData(this.props.count, this.props.history.location.pathname.substr(1),)
+  }
+
   buyOne = () => {
-    this.props.dispatch({ type: 'BUYONE'})
+    console.log('before: ', this.props.count);
+    dispatchBuy(this.props);
+    this.sendAcornData();
   }
 
   eatOne = () => {
     if (this.props.count > 0){
-      this.props.dispatch({ type: 'EATONE'})
+      dispatchEat(this.props)
+      this.sendAcornData();
     }
   }
   handleKeyDown = (e) => {
@@ -44,7 +47,10 @@ class ReduxGoldenAcornApp extends Component {
         <Header />
         <h1>Golden acorn with Redux is more life!</h1>
         <Display acorns={ this.props.count }/>
+        <button onClick={this.buyOne} >TEST
+        </button>
         <Button buyOne={this.buyOne} eatOne={this.eatOne}/>
+        <p className="arrow-info">&uarr; and &darr; keys also work to change the amount of acorns.</p>
       </div>
     );
   }

@@ -18,8 +18,8 @@ class Navbar extends Component {
         <ul className="menu-items-list">
           <li className="menu-item"><a href="/simple">Simple</a></li>
           <li className="menu-item"><a href="/redux">Redux</a></li>
-          <li className="menu-item"><a href="/">High Scores</a></li>
-          <li className="menu-item"><a href="/about">About acorns</a></li>
+          <li className="menu-item"><a href="/index">Subscribe</a></li>
+          <li className="menu-item"><a href="/">Logout</a></li>
         </ul>
       </nav>
     )
