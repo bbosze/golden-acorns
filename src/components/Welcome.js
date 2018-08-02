@@ -32,7 +32,7 @@ class Welcome extends Component {
         </header>
         <GoogleLogin
           clientId="579920879740-bmjr9c2hgiukt563rbbk4tjoul39odhi.apps.googleusercontent.com"
-          buttonText="Login with Google"
+          buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
         />

@@ -1,10 +1,9 @@
 import React from 'react';
-import App from '../components/Navbar';
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
+import Navbar from './components/Navbar';
 
-describe ('<Navbar />', () => {
-  it('renders 1 <Navbar /> component', () => {
-    const component = shallow(<Navbar />);
-    expect(component)..toBeDefined();
-  });
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Navbar />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });

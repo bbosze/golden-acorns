@@ -22,7 +22,6 @@ class ReduxGoldenAcornApp extends Component {
   }
 
   buyOne = () => {
-    console.log('before: ', this.props.count);
     dispatchBuy(this.props);
     this.sendAcornData();
   }

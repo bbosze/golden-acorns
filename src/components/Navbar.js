@@ -19,6 +19,8 @@ class Navbar extends Component {
           <li className="menu-item"><a href="/simple">Simple</a></li>
           <li className="menu-item"><a href="/redux">Redux</a></li>
           <li className="menu-item"><a href="/index">Subscribe</a></li>
+          <li className="menu-item"><a href="/age">Ageteller</a></li>
+          <li className="menu-item"><a href="/currency">Currency</a></li>
           <li className="menu-item"><a href="/">Logout</a></li>
         </ul>
       </nav>

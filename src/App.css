@@ -20,7 +20,8 @@ body {
   background: #eee; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #9244C2; }
 
 .App-intro {
   font-size: large; }
@@ -137,6 +138,9 @@ header {
   outline: inherit;
   margin-right: 20px; }
 
+.submitbutton:active {
+  transform: scale(0.98, 0.98); }
+
 .submitbutton.false {
   display: none; }
 
@@ -168,3 +172,11 @@ form > p {
 
 .header-counter {
   font-size: 1rem; }
+
+.form {
+  margin-top: 3rem; }
+  .form * {
+    margin-top: 1rem; }
+
+.currency-list {
+  list-style-type: none; }

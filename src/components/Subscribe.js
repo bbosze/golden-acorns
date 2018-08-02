@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import '../App.css';
-import inputValidator from './helpers/inputvalidator'
-import passwordValidator from './helpers/passwordvalidator'
-import rePasswordValidator from './helpers/reenter-passwordvalidator'
+import inputValidator from './helpers/inputvalidator';
+import passwordValidator from './helpers/passwordvalidator';
+import rePasswordValidator from './helpers/reenter-passwordvalidator';
 
 
 let addUser = (user) => {
@@ -130,21 +130,21 @@ class Subscribe extends Component {
               onChange={this.handleChange}
             />
             <p>Password must alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
-            <input
+            {/* <input
               className="inputfield"
               type="password"
               name="reenter"
               placeholder="Please reenter password!"
               value={this.state.reenter}
               onChange={this.handleChange}
-            />
-            <p>Password must match the previously entered password</p>
+            /> */}
+            {/* <p>Password must match the previously entered password</p>
             <input
             className={'submitbutton ' + this.state.btnValid }
             type="submit"
             value="Submit"
             onSubmit={this.handleSubmit}
-          />
+          /> */}
         </form>
         <p>Recently subscribed users:
         </p>
