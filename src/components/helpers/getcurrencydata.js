@@ -33,7 +33,7 @@ function xmlToJson(xml) {
 };
 
 function getCurrencyData() {
-  return fetch('https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml', {mode: 'no-cors'})
+  return fetch('https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml')
     .then(response => response.text())
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xml => xmlToJson(xml))
