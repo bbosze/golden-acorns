@@ -59,7 +59,7 @@ class Ageteller extends Component {
             onSubmit={this.handleSubmit}
           />
         </form>
-        <p>{(typeof this.state.age === 'string') ? `You have been able to eating acorns for ${this.state.age}.` : ''}</p>
+        <p>{(typeof this.state.age === 'string') ? `You have been able to eat acorns for ${this.state.age}.` : ''}</p>
       </div>
     )
   }
