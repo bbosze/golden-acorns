@@ -20,7 +20,7 @@ function xmlToJson(xml) {
 			if (typeof(obj[nodeName]) === "undefined") {
 				obj[nodeName] = xmlToJson(item);
 			} else {
-				if (typeof(obj[nodeName].push) == "undefined") {
+				if (typeof(obj[nodeName].push) === "undefined") {
 					var old = obj[nodeName];
 					obj[nodeName] = [];
 					obj[nodeName].push(old);
@@ -38,7 +38,6 @@ function getCurrencyData() {
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xml => xmlToJson(xml))
     .then(data => {
-      console.log('ok');
       return data
     })
     .catch(function(error) {

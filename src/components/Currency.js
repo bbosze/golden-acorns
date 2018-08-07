@@ -9,42 +9,63 @@ class Currency extends Component {
     super(props);
     this.state = {
       data: [],
+      selectedCurrency: '',
+      selectedRate: null,
+      time: ''
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  async handleSubmit(event) {
-    event.preventDefault();
-    await getCurrencyData()
-      .then(data => {
-        this.setState({
-          data: data['gesmes:Envelope'].Cube.Cube[0].Cube || [],
-        })
+  componentDidMount() {
+    getCurrencyData()
+    .then(data => {
+      this.setState({
+        data: data['gesmes:Envelope'].Cube.Cube[0].Cube || [],
+        time: data['gesmes:Envelope'].Cube.Cube[0]['@attributes'].time,
       });
-    console.log(this.state.data);
+    });
   }
 
+  async handleChange(event) {
+    const currency = event.target.value;
+    await this.setState({
+      selectedCurrency: currency,
+    })
+    this.setSelectedRate();
+  }
+
+  setSelectedRate() {
+    const currency = this.state.data.filter(e => e['@attributes'].currency === this.state.selectedCurrency);
+    this.setState({
+      selectedRate: currency[0]['@attributes'].rate,
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <h2>Currency rates from European Central Bank</h2>
-        <form
-          className="form"
-          onSubmit={this.handleSubmit}
+        <h2>Currences in Euro*</h2>
+        <p className="footnote">*From European Central Bank</p>
+        <p>{ this.state.time }</p>
+        <select
+          className="currency-dropdown"
+          onChange={this.handleChange}
           >
-            <input
-            className={'submitbutton'}
-            type="submit"
-            value="Showme"
-            onSubmit={this.handleSubmit}
-          />
-        </form>
-        <ul className="currency-list"> {
-          this.state.data.map(e => <li key={e['@attributes'].rate}>{e['@attributes'].currency} {e['@attributes'].rate}</li>)
-        }
-        </ul>
+          <option disabled selected hidden>Please, select a currency!</option>
+          {
+          this.state.data !== [] ?
+          this.state.data.map(e => <option
+            key={e['@attributes'].currency}
+            value={e['@attributes'].currency}
+            >
+            {e['@attributes'].currency}</option>)
+          : <option>loading</option>
+          }
+        </select>
+        <p>
+          {this.state.selectedRate} {this.state.selectedCurrency}
+        </p>
       </div>
     )
   }

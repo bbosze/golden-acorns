@@ -38,6 +38,7 @@ class Ageteller extends Component {
       date: date
     })
   }
+  
   render() {
     return (
       <div className="App">

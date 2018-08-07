@@ -6,23 +6,14 @@ import Subscribe from './Subscribe';
 import Ageteller from './Ageteller';
 import Currency from './Currency';
 import Welcome from './Welcome';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from './reducers/reducer.js'
-import getInitialState from './helpers/getinitialstate'
 
-const store = createStore(reducer);
-getInitialState('redux').then(data => {
-  store.dispatch({
-    type: 'SET INIT',
-    payload: data
-  })
-});
+
+
 
 
 const Router = () => (
   <BrowserRouter>
-    <Provider store={store}>
+
       <Switch>
         <Route exact path="/" component={Welcome} />
         <Route exact path="/index" component={Subscribe} />
@@ -31,7 +22,6 @@ const Router = () => (
         <Route exact path="/age" component={Ageteller} />
         <Route exact path="/currency" component={Currency} />
       </Switch>
-    </Provider>
   </BrowserRouter>
 );
 
