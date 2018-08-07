@@ -107,7 +107,7 @@ class Subscribe extends Component {
     return (
       <div className="App">
         <Header />
-        <h1>Subscribe now for many new acorns!</h1>
+        <h1>Subscribe now for many new acorns!!!</h1>
         <form
           onSubmit={this.handleSubmit}
           className="form"
