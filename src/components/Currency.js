@@ -13,20 +13,19 @@ class Currency extends Component {
       selectedRate: null,
       time: ''
     }
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     getCurrencyData()
     .then(data => {
       this.setState({
-        data: data['gesmes:Envelope'].Cube.Cube[0].Cube || [],
+        data: data['gesmes:Envelope'].Cube.Cube[0].Cube,
         time: data['gesmes:Envelope'].Cube.Cube[0]['@attributes'].time,
       });
     });
   }
 
-  async handleChange(event) {
+  handleChange = async (event) => {
     const currency = event.target.value;
     await this.setState({
       selectedCurrency: currency,

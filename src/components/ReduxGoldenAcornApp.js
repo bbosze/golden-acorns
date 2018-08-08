@@ -46,8 +46,6 @@ class ReduxGoldenAcornApp extends Component {
         <Header />
         <h1>Golden acorn with Redux is more life!</h1>
         <Display acorns={ this.props.count }/>
-        <button onClick={this.buyOne} >TEST
-        </button>
         <Button buyOne={this.buyOne} eatOne={this.eatOne}/>
         <p className="arrow-info">&uarr; and &darr; keys also work to change the amount of acorns.</p>
       </div>
