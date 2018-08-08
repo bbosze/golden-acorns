@@ -33,7 +33,7 @@ function xmlToJson(xml) {
 };
 
 function getCurrencyData() {
-  return fetch('https://thingproxxy.freeboard.io/fetch/http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml')
+  return fetch('https://thingproxy.freeboard.io/fetch/http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml')
     .then(response => response.text())
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xml => xmlToJson(xml))
