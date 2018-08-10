@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
-
 
 class Ageteller extends Component {
   constructor(props) {
@@ -9,8 +7,6 @@ class Ageteller extends Component {
       date: '',
       age: null,
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   calculateAge(date) {
@@ -20,29 +16,29 @@ class Ageteller extends Component {
       let age = (now.getTime() - birth.getTime())/1000 / 60 / 60 /24 / 365;
       let years = Math.floor(age)
       age -= years
+      console.log(age);
       let months = Math.floor(age * 12);
       return `${years} years, ${months} months`;
     }
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.setState({
       age: this.calculateAge(this.state.date),
     })
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const date = event.target.value;
     this.setState({
       date: date
     })
   }
-  
+
   render() {
     return (
-      <div className="App">
-        <Header />
+      <React.Fragment>
         <form
           className="form"
           onSubmit={this.handleSubmit}
@@ -61,7 +57,7 @@ class Ageteller extends Component {
           />
         </form>
         <p>{(typeof this.state.age === 'string') ? `You have been able to eat acorns for ${this.state.age}.` : ''}</p>
-      </div>
+      </React.Fragment>
     )
   }
 

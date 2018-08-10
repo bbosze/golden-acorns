@@ -4,12 +4,6 @@ import logo from '../logo.svg';
 import Navbar from './Navbar'
 
 class Header extends Component {
-  activateMenuBar() {
-    let menuItems = document.querySelectorAll('.menu-item')
-    menuItems.forEach((e) => {
-      e.classList.toggle('active')
-    })
-  }
   render() {
     return (
       <header className="App-header">

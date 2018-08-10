@@ -17,4 +17,4 @@ function getInitialState(url) {
     });
 }
 
-export default getInitialState
+export default getInitialState;

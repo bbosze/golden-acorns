@@ -8,12 +8,8 @@ import Currency from './Currency';
 import Welcome from './Welcome';
 
 
-
-
-
 const Router = () => (
   <BrowserRouter>
-
       <Switch>
         <Route exact path="/" component={Welcome} />
         <Route exact path="/index" component={Subscribe} />

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import '../App.css';
 import inputValidator from './helpers/inputvalidator';
 import passwordValidator from './helpers/passwordvalidator';
 import rePasswordValidator from './helpers/reenter-passwordvalidator';
+import getUser from './helpers/getuser';
 
 
 let addUser = (user) => {
@@ -18,25 +18,6 @@ let addUser = (user) => {
       password: user.password,
     })
   }).then(response=>response.json())
-}
-
-let getUser = () => {
-  return fetch(`http://localhost:9000/users`)
-    .then(response => {
-      if (response.ok) {
-        return Promise.resolve(response);
-      }
-      else {
-        return Promise.reject(new Error('Failed to load'));
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(function(error) {
-        console.log(`Error: ${error.message}`);
-  });
 }
 
 const patterns = {
@@ -105,8 +86,7 @@ class Subscribe extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
+      <React.Fragment>
         <h1>Subscribe now for many new acorns!</h1>
         <form
           onSubmit={this.handleSubmit}
@@ -138,13 +118,13 @@ class Subscribe extends Component {
               value={this.state.reenter}
               onChange={this.handleChange}
             /> */}
-            {/* <p>Password must match the previously entered password</p>
+            <p>Password must match the previously entered password</p>
             <input
             className={'submitbutton ' + this.state.btnValid }
             type="submit"
             value="Submit"
             onSubmit={this.handleSubmit}
-          /> */}
+          />
         </form>
         <p>Recently subscribed users:
         </p>
@@ -152,7 +132,7 @@ class Subscribe extends Component {
           this.state.users.map(users => <li key={users.email}> {users.email} </li>)
           }
         </ul>
-      </div>
+      </React.Fragment>
     );
   }
 }

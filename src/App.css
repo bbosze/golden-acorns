@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
+html, body, #root {
+  height: 100%; }
+
 body {
   margin: 0;
   padding: 0;
@@ -17,7 +20,11 @@ body {
 .App-header {
   padding: 20px;
   color: #9244C2;
-  background: #eee; }
+  background: #eee;
+  height: 7%;
+  display: flex;
+  align-items: center;
+  height: 10%; }
 
 a {
   text-decoration: none;
@@ -99,11 +106,16 @@ header {
   width: 50px;
   display: none; }
 
+.menu-items-list {
+  display: flex; }
+
 @media (max-width: 768px) {
   .toggle {
     display: block; }
   .menu-items-list {
-    width: 100%; }
+    width: 100%;
+    background: #c28b44;
+    flex-direction: column; }
   .menu-item {
     text-align: left;
     display: none; }
@@ -190,3 +202,39 @@ form > p {
   border: 2px solid #9244C2;
   text-align: center;
   font-size: 1rem; }
+
+.maincontainer {
+  display: flex;
+  justify-content: space-between;
+  min-height: 85%; }
+
+.sidebar {
+  background: #b3c244;
+  margin: 0;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem; }
+
+.active {
+  width: 20rem;
+  -webkit-transition: width 300ms ease-out;
+  -moz-transition: width 300ms ease-out;
+  -o-transition: width 300ms ease-out;
+  transition: width 300ms ease-out; }
+
+.inactive {
+  width: 4rem;
+  -webkit-transition: width 300ms ease-in;
+  -moz-transition: width 300ms ease-in;
+  -o-transition: width 300ms ease-in;
+  transition: width 300ms ease-in; }
+
+.sidebar-button {
+  background: none;
+  color: #9244C2;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 0; }

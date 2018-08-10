@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Header from './Header';
 import Button from './Button';
 import { dispatchEat, dispatchBuy } from './actions/actions'
 import putAcornData from './helpers/putacorndata'
@@ -42,13 +41,12 @@ class ReduxGoldenAcornApp extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Header />
+      <React.Fragment>
         <h1>Golden acorn with Redux is more life!</h1>
         <Display acorns={ this.props.count }/>
         <Button buyOne={this.buyOne} eatOne={this.eatOne}/>
         <p className="arrow-info">&uarr; and &darr; keys also work to change the amount of acorns.</p>
-      </div>
+      </React.Fragment>
     );
   }
 }

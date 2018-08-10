@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import Button from './Button';
 import Display  from './Display';
 import getInitialState from './helpers/getinitialstate'
@@ -44,13 +43,12 @@ class SimpleGoldenAcornApp extends Component {
 
   render() {
     return (
-      <div className="App" >
-        <Header />
+      <React.Fragment>
         <h1>Golden acorn is life!</h1>
         <Display acorns={ this.state.acorns }/>
         <Button buyOne={this.buyOne} eatOne={this.eatOne}/>
         <p className="arrow-info">&uarr; and &darr; keys also work to change the amount of acorns.</p>
-      </div>
+      </React.Fragment>
     );
   }
 }

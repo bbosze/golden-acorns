@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import getCurrencyData from './helpers/getcurrencydata'
-
 
 
 class Currency extends Component {
@@ -42,8 +40,7 @@ class Currency extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
+      <React.Fragment>
         <h2>Currences in Euro*</h2>
         <p className="footnote">*From European Central Bank</p>
         <p>{ this.state.time }</p>
@@ -65,7 +62,7 @@ class Currency extends Component {
         <p>
           {this.state.selectedRate} {this.state.selectedCurrency}
         </p>
-      </div>
+      </React.Fragment>
     )
   }
 
