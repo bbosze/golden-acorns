@@ -6,6 +6,7 @@ import Subscribe from './Subscribe';
 import Ageteller from './Ageteller';
 import Currency from './Currency';
 import Welcome from './Welcome';
+import Aquarium from './Aquarium';
 
 
 const Router = () => (
@@ -17,6 +18,7 @@ const Router = () => (
         <Route exact path="/redux" component={ReduxGoldenAcornApp} />
         <Route exact path="/age" component={Ageteller} />
         <Route exact path="/currency" component={Currency} />
+        <Route exact path="/aquarium" component={Aquarium} />
       </Switch>
   </BrowserRouter>
 );

@@ -27,9 +27,6 @@ class Welcome extends Component {
     }
     return (
       <div>
-        <header className="App-welcome">
-          <img src={logo} className="App-logo" alt="acorn" />
-        </header>
         <GoogleLogin
           clientId="579920879740-bmjr9c2hgiukt563rbbk4tjoul39odhi.apps.googleusercontent.com"
           buttonText="Login"

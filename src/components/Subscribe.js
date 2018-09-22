@@ -60,7 +60,7 @@ class Subscribe extends Component {
     else {
       await this.setState({ emailValid: inputValidator(value, patterns[name]) });
     }
-    const allValidators = (this.state.emailValid && this.state.passValid) ? true : false
+    const allValidators = (this.state.emailValid && this.state.passValid) ? true : false //write it with every()
     this.setState({ btnValid: allValidators });
   };
 

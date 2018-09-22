@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import getCurrencyData from './helpers/getcurrencydata'
 
-
 class Currency extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +40,7 @@ class Currency extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Currences in Euro*</h2>
+        <h2>Currences in Euro*</h2> 
         <p className="footnote">*From European Central Bank</p>
         <p>{ this.state.time }</p>
         <select

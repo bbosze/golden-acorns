@@ -20,14 +20,14 @@ class ReduxGoldenAcornApp extends Component {
     putAcornData(this.props.count, this.props.history.location.pathname.substr(1),)
   }
 
-  buyOne = () => {
-    dispatchBuy(this.props);
-    this.sendAcornData();
+  buyOne = async () => {
+    await dispatchBuy(this.props);
+     this.sendAcornData();
   }
 
-  eatOne = () => {
+  eatOne = async () => {
     if (this.props.count > 0){
-      dispatchEat(this.props)
+      await dispatchEat(this.props)
       this.sendAcornData();
     }
   }

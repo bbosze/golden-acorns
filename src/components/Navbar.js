@@ -21,6 +21,7 @@ class Navbar extends Component {
           <li className="menu-item"><a href="/index">Subscribe</a></li>
           <li className="menu-item"><a href="/age">Ageteller</a></li>
           <li className="menu-item"><a href="/currency">Currency</a></li>
+          <li className="menu-item"><a href="/aquarium">Aquarium</a></li>
           <li className="menu-item"><a href="/">Logout</a></li>
         </ul>
       </nav>
